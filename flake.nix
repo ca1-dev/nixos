@@ -26,6 +26,7 @@
     nixosConfigurations = {
       homepc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
         modules = [
           home-manager.nixosModules.home-manager
           nur.modules.nixos.default
@@ -50,6 +51,7 @@
 
       nom = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
+        pkgs = import nixpkgs { system = "aarch64-linux"; config.allowUnfree = true; };
         modules = [
           apple-silicon.nixosModules.apple-silicon-support
 
