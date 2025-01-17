@@ -34,7 +34,17 @@ in
     peripheralFirmwareDirectory = /home/ca1/asahi;
   };
 
-  programs.light.enable = true;  
+  nix.settings = {
+    auto-optimise-store = true;
+    extra-substituters = [
+      "https://nixos-asahi.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nixos-asahi.cachix.org-1:CPH9jazpT/isOQvFhtAZ0Z18XNhAp29+LLVHr0b2qVk="
+    ];
+  };
+
+  programs.light.enable = true;
   services.actkbd = {
     enable = true;
     bindings = [
