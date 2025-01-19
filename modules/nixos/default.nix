@@ -12,7 +12,6 @@
     fzf
     git
     htop
-    killall
     neovim
     p7zip
     ripgrep
