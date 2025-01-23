@@ -9,7 +9,7 @@ in
   environment.systemPackages = with pkgs; [
     gcc
     gnumake
-    kitty
+    nodejs
     rustup
     unzip
   ];
