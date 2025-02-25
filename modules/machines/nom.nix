@@ -4,6 +4,15 @@ let
   amd64Pkgs = import <nixpkgs> { system = "x86_64-linux"; config.allowUnfree = true; };
 in
 {
+  i18n.inputMethod = {
+    type = "fcitx5";
+    enable = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+    ];
+  };
+
   networking.hostName = "nom";
 
   environment.systemPackages = with pkgs; [
