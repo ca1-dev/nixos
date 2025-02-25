@@ -65,8 +65,7 @@ in
     };
   };
 
-  system.stateVersion = "24.05";
-
+  system.stateVersion = "25.05";
 
   # from hardware config
   imports =
@@ -74,20 +73,20 @@ in
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "usbhid" "usb_storage" ];
+  boot.initrd.availableKernelModules = [ "usb_storage" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
     {
-      device = "/dev/disk/by-uuid/fafb25a5-dc61-4535-a9b2-56f784611639";
+      device = "/dev/disk/by-uuid/c28f9d3f-3938-4e40-862f-007b8250340f";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
     {
-      device = "/dev/disk/by-uuid/1891-1610";
+      device = "/dev/disk/by-uuid/79C6-0A1A";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
@@ -99,7 +98,6 @@ in
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enu1u4c2.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
