@@ -9,11 +9,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1735172763,
-        "narHash": "sha256-a6n8RsiAolz6p24Fsr/gTndx9xr9USpKqKK6kzBeXQc=",
+        "lastModified": 1738646237,
+        "narHash": "sha256-++0dXoZO9l5oceiGQsJmtUI5WXlPMw6QKjpg7vGPl3w=",
         "owner": "tpwrules",
         "repo": "nixos-apple-silicon",
-        "rev": "3daf0637409689d7a1304cedc50d20542bc47905",
+        "rev": "3d1c6c27b14c4b8fcbdaec779e715f30cb72ed15",
         "type": "github"
       },
       "original": {
@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1736421950,
-        "narHash": "sha256-RyrX0WFXxFrYvzHNLTIyuk3NcNl3UBykuYru/P0zW5E=",
+        "lastModified": 1740494361,
+        "narHash": "sha256-Dd/GhJ9qKmUwuhgt/PAROG8J6YdU2ZjtJI9SQX5sVQI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d4aebb947a301b8da8654a804979a738c5c5da50",
+        "rev": "74f0a8546e3f2458c870cf90fc4b38ac1f498b17",
         "type": "github"
       },
       "original": {
@@ -83,16 +83,32 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1736434077,
-        "narHash": "sha256-fTK2HK1NT2jkqGjFiKn5ZwpGwvObpabSzpxgdB6lDqA=",
         "owner": "linkfrg",
         "repo": "ignis",
-        "rev": "42d38a3a0fb2fb3cd32a5f39b3fef35e7c39ff36",
+        "rev": "4507ffbbca081acb0597ca7a4c17636a8dd2f33c",
         "type": "github"
       },
       "original": {
         "owner": "linkfrg",
         "repo": "ignis",
+        "type": "github"
+      }
+    },
+    "nixos-aarch64-widevine": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1712816564,
+        "narHash": "sha256-2oPCuv4hox+FDWdUnyjhmSB7d24i0mFH5pJjVJGY6JM=",
+        "owner": "epetousis",
+        "repo": "nixos-aarch64-widevine",
+        "rev": "fa046abfed9ff3b5c1e0a2ae16311a33056056fd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "epetousis",
+        "repo": "nixos-aarch64-widevine",
         "type": "github"
       }
     },
@@ -114,16 +130,32 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1736916166,
-        "narHash": "sha256-puPDoVKxkuNmYIGMpMQiK8bEjaACcCksolsG36gdaNQ=",
+        "lastModified": 1712122226,
+        "narHash": "sha256-pmgwKs8Thu1WETMqCrWUm0CkN1nmCKX3b51+EXsAZyY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e24b4c09e963677b1beea49d411cd315a024ad3a",
+        "rev": "08b9151ed40350725eb40b1fe96b0b86304a654b",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-24.11",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1740367490,
+        "narHash": "sha256-WGaHVAjcrv+Cun7zPlI41SerRtfknGQap281+AakSAw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "0196c0175e9191c474c26ab5548db27ef5d34b05",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -137,11 +169,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1736448643,
-        "narHash": "sha256-XDoDk0q0WwtSfQNCX1R71bvZQREzqUfd5P+iZWxQbBo=",
+        "lastModified": 1740522944,
+        "narHash": "sha256-0meTI0IHRu2b3QPCo8zS5tP0i4fK2z+c97eJoWsO5DA=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "650cfc627d76124df9b1a1cf0748b7847e87d272",
+        "rev": "f38e3a94f086cf3a41e05e2a086926d8cd2790fe",
         "type": "github"
       },
       "original": {
@@ -155,7 +187,8 @@
         "apple-silicon": "apple-silicon",
         "home-manager": "home-manager",
         "ignis": "ignis",
-        "nixpkgs": "nixpkgs_2",
+        "nixos-aarch64-widevine": "nixos-aarch64-widevine",
+        "nixpkgs": "nixpkgs_3",
         "nur": "nur"
       }
     },

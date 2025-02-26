@@ -34,9 +34,7 @@
 
   fonts.packages = with pkgs;
     [
-      (nerdfonts.override {
-        fonts = [ "FiraCode" ];
-      })
+      nerd-fonts.fira-code
       noto-fonts
       noto-fonts-lgc-plus
       noto-fonts-cjk-sans
