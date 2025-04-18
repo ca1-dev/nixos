@@ -19,9 +19,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-aarch64-widevine.url = "github:epetousis/nixos-aarch64-widevine";
+    nixos-aarch64-widevine = {
+      url = "github:epetousis/nixos-aarch64-widevine";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    ignis.url = "github:linkfrg/ignis";
+    ignis = {
+      url = "github:linkfrg/ignis";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, home-manager, nur, ignis, apple-silicon, nixos-aarch64-widevine, ... }: {
@@ -66,7 +72,6 @@
           nur.modules.nixos.default
 
           { environment.systemPackages = [ ignis.packages.aarch64-linux.ignis ]; }
-
 
           ./modules/nixos
           ./modules/machines/nom.nix
