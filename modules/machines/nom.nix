@@ -37,7 +37,6 @@ in
   };
 
   hardware.asahi = {
-    withRust = true;
     setupAsahiSound = true;
     useExperimentalGPUDriver = true;
     experimentalGPUInstallMode = "replace";
@@ -48,9 +47,11 @@ in
   nix.settings = {
     auto-optimise-store = true;
     extra-substituters = [
+      "https://nix-community.cachix.org"
       "https://nixos-asahi.cachix.org"
     ];
     extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nixos-asahi.cachix.org-1:CPH9jazpT/isOQvFhtAZ0Z18XNhAp29+LLVHr0b2qVk="
     ];
   };
@@ -64,6 +65,7 @@ in
     ];
   };
 
+  networking.dhcpcd.enable = true;
   networking = {
     wireless.enable = false;
     networkmanager.enable = true;

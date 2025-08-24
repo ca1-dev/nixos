@@ -15,7 +15,7 @@
     };
 
     apple-silicon = {
-      url = "github:tpwrules/nixos-apple-silicon";
+      url = "github:nix-community/nixos-apple-silicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -25,12 +25,14 @@
     };
 
     ignis = {
-      url = "github:linkfrg/ignis";
+      url = "github:ignis-sh/ignis";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland.url = "git+https://github.com/hyprwm/hyprland?submodules=1";
   };
 
-  outputs = { nixpkgs, home-manager, nur, ignis, apple-silicon, nixos-aarch64-widevine, ... }: {
+  outputs = { nixpkgs, home-manager, nur, ignis, apple-silicon, nixos-aarch64-widevine, hyprland, ... }: {
     nixosConfigurations = {
       homepc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -64,14 +66,19 @@
           apple-silicon.nixosModules.apple-silicon-support
           ({ pkgs, ... }:
             {
-              nixpkgs.overlays = [ nixos-aarch64-widevine.overlays.default ];
+              nixpkgs.overlays = [ nixos-aarch64-widevine.overlays.default hyprland.overlays.hyprland-packages ];
               environment.sessionVariables.MOZ_GMP_PATH = [ "${pkgs.widevine-cdm-lacros}/gmp-widevinecdm/system-installed" ];
+              environment.systemPackages = [
+                (ignis.packages.${pkgs.system}.default.override {
+                  enableAudioService = true;
+                  useDartSass = true;
+                  extraPackages = [ ];
+                })
+              ];
             })
 
           home-manager.nixosModules.home-manager
           nur.modules.nixos.default
-
-          { environment.systemPackages = [ ignis.packages.aarch64-linux.ignis ]; }
 
           ./modules/nixos
           ./modules/machines/nom.nix
