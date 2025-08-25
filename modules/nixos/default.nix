@@ -21,6 +21,7 @@
     p7zip
     ripgrep
     tldr
+    viu
     yadm
     zoxide
     zsh
