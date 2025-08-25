@@ -32,67 +32,34 @@
     hyprland.url = "git+https://github.com/hyprwm/hyprland?submodules=1";
   };
 
-  outputs = { nixpkgs, home-manager, nur, ignis, apple-silicon, nixos-aarch64-widevine, hyprland, ... }: {
+  outputs = { nixpkgs, home-manager, ignis, ... }@inputs: {
     nixosConfigurations = {
       homepc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
+        specialArgs = { inherit inputs; };
         modules = [
-          home-manager.nixosModules.home-manager
-          nur.modules.nixos.default
-
-          { environment.systemPackages = [ ignis.packages.x86_64-linux.ignis ]; }
-
           ./modules/nixos
+          ./modules/home-manager
           ./modules/machines/homepc.nix
 
-          {
-            imports = [ ./modules/home-manager/options.nix ];
-
-            home-manager.users.ca1 = {
-              imports = [
-                ./modules/home-manager/themes/tokyonight
-                ./modules/home-manager/home
-              ];
-            };
-          }
+          home-manager.nixosModules.home-manager
+          inputs.nur.modules.nixos.default
         ];
       };
 
       nom = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         pkgs = import nixpkgs { system = "aarch64-linux"; config.allowUnfree = true; };
+        specialArgs = { inherit inputs; };
         modules = [
-          apple-silicon.nixosModules.apple-silicon-support
-          ({ pkgs, ... }:
-            {
-              nixpkgs.overlays = [ nixos-aarch64-widevine.overlays.default hyprland.overlays.hyprland-packages ];
-              environment.sessionVariables.MOZ_GMP_PATH = [ "${pkgs.widevine-cdm-lacros}/gmp-widevinecdm/system-installed" ];
-              environment.systemPackages = [
-                (ignis.packages.${pkgs.system}.default.override {
-                  enableAudioService = true;
-                  useDartSass = true;
-                  extraPackages = [ ];
-                })
-              ];
-            })
-
-          home-manager.nixosModules.home-manager
-          nur.modules.nixos.default
-
           ./modules/nixos
+          ./modules/home-manager
           ./modules/machines/nom.nix
 
-          {
-            imports = [ ./modules/home-manager/options.nix ];
-
-            home-manager.users.ca1 = {
-              imports = [
-                ./modules/home-manager/themes/tokyonight
-                ./modules/home-manager/home
-              ];
-            };
-          }
+          home-manager.nixosModules.home-manager
+          inputs.nur.modules.nixos.default
+          inputs.apple-silicon.nixosModules.apple-silicon-support
         ];
       };
     };

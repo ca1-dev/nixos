@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -9,6 +9,11 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   environment.systemPackages = with pkgs; [
+    (inputs.ignis.packages.${pkgs.system}.default.override {
+      enableAudioService = true;
+      useDartSass = true;
+    })
+
     fzf
     git
     htop

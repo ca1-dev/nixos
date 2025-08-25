@@ -1,9 +1,12 @@
-{ config, lib, pkgs, nixpkgs, modulesPath, ... }:
+{ config, lib, pkgs, modulesPath, inputs, ... }:
 
 let
   amd64Pkgs = import <nixpkgs> { system = "x86_64-linux"; config.allowUnfree = true; };
 in
 {
+  environment.sessionVariables.MOZ_GMP_PATH = [ "${pkgs.widevine-cdm-lacros}/gmp-widevinecdm/system-installed" ];
+  nixpkgs.overlays = [ inputs.nixos-aarch64-widevine.overlays.default ];
+
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
