@@ -41,8 +41,6 @@ in
 
   hardware.asahi = {
     setupAsahiSound = true;
-    useExperimentalGPUDriver = true;
-    experimentalGPUInstallMode = "replace";
     extractPeripheralFirmware = true;
     peripheralFirmwareDirectory = /home/ca1/asahi;
   };
