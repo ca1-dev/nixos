@@ -19,6 +19,9 @@ in
   networking.hostName = "nom";
 
   environment.systemPackages = with pkgs; [
+    (pkgs.extend inputs.nixos-muvm-fex.overlays.default).muvm
+    squashfsTools
+
     gcc
     gnumake
     nodejs

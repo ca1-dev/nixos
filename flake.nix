@@ -29,6 +29,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-muvm-fex = {
+      url = "github:nrabulinski/nixos-muvm-fex/native-build";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland.url = "git+https://github.com/hyprwm/hyprland?submodules=1";
   };
 
