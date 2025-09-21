@@ -186,12 +186,27 @@
 
           # address bar suggestions
           "browser.search.suggest.enabled" = false;
-          "browser.urlbar.suggest.history" = false;
-          "browser.urlbar.suggest.bookmark" = false;
-          "browser.urlbar.suggest.openpage" = false;
-          "browser.urlbar.suggest.topsites" = false;
-          "browser.urlbar.suggest.engines" = false;
           "browser.urlbar.suggest.recentsearches" = false;
+          "browser.urlbar.suggest.addons" = false;
+          "browser.urlbar.suggest.amp" = false;
+          "browser.urlbar.suggest.bookmark" = false;
+          "browser.urlbar.suggest.calculator" = false;
+          "browser.urlbar.suggest.clipboard" = false;
+          "browser.urlbar.suggest.engines" = false;
+          "browser.urlbar.suggest.fakespot" = false;
+          "browser.urlbar.suggest.history" = false;
+          "browser.urlbar.suggest.mdn" = false;
+          "browser.urlbar.suggest.openpage" = false;
+          "browser.urlbar.suggest.quickactions" = false;
+          "browser.urlbar.suggest.quicksuggest.nonsponsored" = false;
+          "browser.urlbar.suggest.quicksuggest.sponsored" = false;
+          "browser.urlbar.suggest.remotetab" = false;
+          "browser.urlbar.suggest.searches" = false;
+          "browser.urlbar.suggest.topsites" = false;
+          "browser.urlbar.suggest.trending" = false;
+          "browser.urlbar.suggest.weather" = false;
+          "browser.urlbar.suggest.wikipedia" = false;
+          "browser.urlbar.suggest.yelp" = false;
 
           # clear on shutdown
           "privacy.sanitize.sanitizeOnShutdown" = true;
