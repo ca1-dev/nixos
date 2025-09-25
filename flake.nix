@@ -67,6 +67,21 @@
           inputs.apple-silicon.nixosModules.apple-silicon-support
         ];
       };
+
+      nom2 = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        pkgs = import nixpkgs { system = "aarch64-linux"; config.allowUnfree = true; };
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./modules/nixos
+          ./modules/home-manager
+          ./modules/machines/nom2.nix
+
+          home-manager.nixosModules.home-manager
+          inputs.nur.modules.nixos.default
+          inputs.apple-silicon.nixosModules.apple-silicon-support
+        ];
+      };
     };
   };
 }
