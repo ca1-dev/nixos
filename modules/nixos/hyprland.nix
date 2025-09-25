@@ -5,8 +5,6 @@
     ./gui.nix
   ];
 
-  nixpkgs.overlays = [ inputs.hyprland.overlays.hyprland-packages ];
-
   environment.systemPackages = with pkgs;
     [
       grimblast

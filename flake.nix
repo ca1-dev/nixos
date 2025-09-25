@@ -33,8 +33,6 @@
       url = "github:nrabulinski/nixos-muvm-fex/native-build";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprland.url = "git+https://github.com/hyprwm/hyprland?submodules=1";
   };
 
   outputs = { nixpkgs, home-manager, ignis, ... }@inputs: {
