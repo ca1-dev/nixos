@@ -32,6 +32,77 @@ in
     tmux
   ];
 
+  services.kanata = {
+    enable = true;
+    keyboards = {
+      internalKeyboard = {
+        #devices = [
+        #"/dev/input/by-path/platform-2a9b30000.input-event-kbd"
+        #];
+        extraDefCfg = "process-unmapped-keys yes";
+        config = ''
+          (defalias
+              sym (layer-toggle sym)
+              gaming (layer-switch gaming)
+              default (layer-switch default)
+          )
+
+          (defsrc
+              ` 1 2 3 4 5 6 7 8 9 0 - = Backspace ] Enter \
+
+              q w e r t y u i o p [
+              caps h j k l ; '
+              m /
+
+              MetaLeft
+              AltLeft
+              MetaRight
+              AltRight
+          )
+
+          (deflayer default
+              NumLock Numpad1 Numpad2 Numpad3 Numpad4 Numpad5 Numpad6 Numpad7 Numpad8 Numpad9 Numpad0 NumpadSubtract NumpadAdd Delete ShiftLeft ShiftLeft ShiftLeft
+
+              _ _ _ _ _ _ _ _ _ _ Backspace
+              Escape _ _ _ _ _ Enter
+              _ _
+
+              @sym
+              MetaLeft
+              AltLeft
+              @gaming
+          )
+
+          (deflayer sym
+              _ F1 F2 F3 f4 F5 F6 F7 F8 F9 F10 F11 F12 _ _ _ _
+
+              1 2 3 4 5 6 7 8 9 0 _
+              _ - = [ ] ' _
+              ` \
+
+              _
+              _
+              _
+              _
+          )
+
+          (deflayer gaming
+              _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+              _ _ _ _ _ _ _ _ _ _ _
+              Escape _ _ _ _ _ _
+              _ _
+
+              @sym
+              _
+              _
+              @default
+          )
+        '';
+      };
+    };
+  };
+
   services.upower.enable = true;
 
   zramSwap.enable = true;
