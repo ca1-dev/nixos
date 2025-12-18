@@ -10,10 +10,15 @@ in
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      fcitx5-gtk
-    ];
+    fcitx5 = {
+      addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-gtk
+      ];
+      settings.globalOptions = {
+        "Hotkey/TriggerKeys"."0" = "Control+Shift+space";
+      };
+    };
   };
 
   networking.hostName = "nom2";
