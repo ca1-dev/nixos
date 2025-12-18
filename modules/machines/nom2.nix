@@ -54,6 +54,7 @@ in
               caps h j k l ; '
               m /
 
+              <
               MetaLeft
               AltLeft
               MetaRight
@@ -67,6 +68,7 @@ in
               Escape _ _ _ _ _ Enter
               _ _
 
+              MetaLeft
               @sym
               MetaLeft
               AltLeft
@@ -84,6 +86,7 @@ in
               _
               _
               _
+              _
           )
 
           (deflayer gaming
@@ -93,6 +96,7 @@ in
               Escape _ _ _ _ _ _
               _ _
 
+              _
               @sym
               _
               _
