@@ -182,7 +182,8 @@ in
 
   # from hardware config
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "usb_storage" "sdhci_pci" ];
@@ -191,12 +192,14 @@ in
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/95ce4a46-b753-441f-a190-e72f651324fb";
+    {
+      device = "/dev/disk/by-uuid/95ce4a46-b753-441f-a190-e72f651324fb";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/5721-1F10";
+    {
+      device = "/dev/disk/by-uuid/5721-1F10";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
