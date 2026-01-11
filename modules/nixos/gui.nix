@@ -7,7 +7,7 @@
       default_session = {
         command = builtins.concatStringsSep " " [
           "${pkgs.greetd.tuigreet}/bin/tuigreet"
-          "--cmd 'sh -c \"source /etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh && Hyprland\"'"
+          "--cmd 'sh -c \"source /etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh && start-hyprland\"'"
           "--time"
           "--time-format '%a %d/%m %H:%M'"
           "--remember"
