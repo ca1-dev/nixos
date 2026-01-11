@@ -74,6 +74,7 @@
           ./modules/nixos
           ./modules/home-manager
           ./modules/machines/nom2.nix
+          ./modules/nixos/obs.nix
 
           home-manager.nixosModules.home-manager
           inputs.nur.modules.nixos.default
