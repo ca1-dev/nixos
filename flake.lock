@@ -24,11 +24,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767637567,
-        "narHash": "sha256-njwPfL5gM/KRGLJ29CbQ4nLBoEkNPMvEHBAAPOP8BZc=",
+        "lastModified": 1773418853,
+        "narHash": "sha256-ELGvz8LW3fEzBTO1FpojRAPqp7+9xs5lspZb9NoZrbY=",
         "owner": "nix-community",
         "repo": "nixos-apple-silicon",
-        "rev": "530aa73aa9a21a078ff861b84767ae1d469715fa",
+        "rev": "2fbdf62451bcd9fc83ca99c56a6e379df8c47c8d",
         "type": "github"
       },
       "original": {
@@ -39,11 +39,11 @@
     },
     "flake-compat": {
       "locked": {
-        "lastModified": 1746162366,
-        "narHash": "sha256-5SSSZ/oQkwfcAz/o/6TlejlVGqeK08wyREBQ5qFFPhM=",
+        "lastModified": 1761640442,
+        "narHash": "sha256-AtrEP6Jmdvrqiv4x2xa5mrtaIp3OEe8uBYCDZDS+hu8=",
         "owner": "nix-community",
         "repo": "flake-compat",
-        "rev": "0f158086a2ecdbb138cd0429410e44994f1b7e4b",
+        "rev": "4a56054d8ffc173222d09dad23adf4ba946c8884",
         "type": "github"
       },
       "original": {
@@ -80,11 +80,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768068402,
-        "narHash": "sha256-bAXnnJZKJiF7Xr6eNW6+PhBf1lg2P1aFUO9+xgWkXfA=",
+        "lastModified": 1773422513,
+        "narHash": "sha256-MPjR48roW7CUMU6lu0+qQGqj92Kuh3paIulMWFZy+NQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "8bc5473b6bc2b6e1529a9c4040411e1199c43b4c",
+        "rev": "ef12a9a2b0f77c8fa3dda1e7e494fca668909056",
         "type": "github"
       },
       "original": {
@@ -182,27 +182,26 @@
         "nixpkgs-muvm": "nixpkgs-muvm"
       },
       "locked": {
-        "lastModified": 1747923214,
-        "narHash": "sha256-rva/48UdH1TdrlI8gX6LEd0W/3NxE4OVPWB3FMSYzfo=",
-        "owner": "nrabulinski",
-        "repo": "nixos-muvm-fex",
-        "rev": "9bf86173ca62ab64e63c1c83b27b664e3df3e03a",
-        "type": "github"
+        "lastModified": 1771555692,
+        "narHash": "sha256-/7H+VSRBaWPH8HqIV47OQxDyUbt7r6w1AXw5Wy6V1AY=",
+        "ref": "refs/heads/main",
+        "rev": "8f1c56f60f49bceb51966ad73aa28aafe9e5c039",
+        "revCount": 20,
+        "type": "git",
+        "url": "file:///home/ca1/code/nixos-muvm-fex/"
       },
       "original": {
-        "owner": "nrabulinski",
-        "ref": "native-build",
-        "repo": "nixos-muvm-fex",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/ca1/code/nixos-muvm-fex/"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1767892417,
-        "narHash": "sha256-dhhvQY67aboBk8b0/u0XB6vwHdgbROZT3fJAjyNh5Ww=",
+        "lastModified": 1773282481,
+        "narHash": "sha256-b/GV2ysM8mKHhinse2wz+uP37epUrSE+sAKXy/xvBY4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3497aa5c9457a9d88d71fa93a4a8368816fbeeba",
+        "rev": "fe416aaedd397cacb33a610b33d60ff2b431b127",
         "type": "github"
       },
       "original": {
@@ -229,6 +228,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1773375660,
+        "narHash": "sha256-SEzUWw2Rf5Ki3bcM26nSKgbeoqi2uYy8IHVBqOKjX3w=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "3e20095fe3c6cbb1ddcef89b26969a69a1570776",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -237,11 +252,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768077148,
-        "narHash": "sha256-sjfcvfWFt7ys5hAnq0nVStccsz2UVl1rHo8egumlgoQ=",
+        "lastModified": 1773454339,
+        "narHash": "sha256-hdnKLQkgms20BoT00qtmaqUHxY9FENuY/Hnv/Ev9hjg=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "3d6beee9c7830e83eacb8ae1e193dd7ecf343156",
+        "rev": "0e25b02845aec4d8124e278b4a7e4cbf56d50382",
         "type": "github"
       },
       "original": {
@@ -258,6 +273,7 @@
         "nixos-aarch64-widevine": "nixos-aarch64-widevine",
         "nixos-muvm-fex": "nixos-muvm-fex",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-stable": "nixpkgs-stable",
         "nur": "nur"
       }
     }
