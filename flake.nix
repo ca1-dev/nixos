@@ -38,8 +38,7 @@
   outputs = { nixpkgs, home-manager, ignis, ... }@inputs: {
     nixosConfigurations = {
       homepc = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
+        pkgs = import nixpkgs { hostPlatform = "x86_64-linux"; config.allowUnfree = true; };
         specialArgs = { inherit inputs; };
         modules = [
           ./modules/nixos
@@ -52,8 +51,7 @@
       };
 
       nom = nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
-        pkgs = import nixpkgs { system = "aarch64-linux"; config.allowUnfree = true; };
+        pkgs = import nixpkgs { hostPlatform = "aarch64-linux"; config.allowUnfree = true; };
         specialArgs = { inherit inputs; };
         modules = [
           ./modules/nixos
@@ -67,8 +65,7 @@
       };
 
       nom2 = nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
-        pkgs = import nixpkgs { system = "aarch64-linux"; config.allowUnfree = true; };
+        pkgs = import nixpkgs { hostPlatform = "aarch64-linux"; config.allowUnfree = true; };
         specialArgs = { inherit inputs; };
         modules = [
           ./modules/nixos

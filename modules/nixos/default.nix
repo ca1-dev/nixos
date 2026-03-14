@@ -9,7 +9,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   environment.systemPackages = with pkgs; [
-    (inputs.ignis.packages.${pkgs.system}.default.override {
+    (inputs.ignis.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
       enableAudioService = true;
       useDartSass = true;
     })

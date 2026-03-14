@@ -1,7 +1,7 @@
 { config, lib, pkgs, modulesPath, inputs, ... }:
 
 let
-  amd64Pkgs = import <nixpkgs> { system = "x86_64-linux"; config.allowUnfree = true; };
+  amd64Pkgs = import <nixpkgs> { hostPlatform = "x86_64-linux"; config.allowUnfree = true; };
 in
 {
   environment.sessionVariables.MOZ_GMP_PATH = [ "${pkgs.widevine-cdm-lacros}/gmp-widevinecdm/system-installed" ];
