@@ -17,6 +17,7 @@
     fzf
     git
     htop
+    neomutt
     neovim
     p7zip
     ripgrep
@@ -30,6 +31,7 @@
     mpv
     networkmanagerapplet
     pcmanfm
+    vimiv-qt
     wezterm
   ];
 
