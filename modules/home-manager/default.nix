@@ -8,6 +8,7 @@
       imports = [
         ./themes/tokyonight
         ./firefox.nix
+        ./xdg.nix
       ];
 
       home.pointerCursor = {
