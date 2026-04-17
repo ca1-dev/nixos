@@ -15,52 +15,6 @@
           "wikipedia".metaData.hidden = true;
         };
 
-        bookmarks = {
-          force = true;
-          settings = [{
-            name = "toolbar";
-            toolbar = true;
-            bookmarks = [
-              {
-                name = "";
-                url = "https://youtube.com/";
-              }
-              {
-                name = "";
-                url = "https://twitch.tv/";
-              }
-              {
-                name = "";
-                url = "https://tumblr.com/dashboard/";
-              }
-              {
-                name = "";
-                url = "https://github.com/";
-              }
-              {
-                name = "";
-                url = "https://monkeytype.com/";
-              }
-              {
-                name = "";
-                url = "https://orteil.dashnet.org/cookieclicker/";
-              }
-              {
-                name = "";
-                url = "https://wikipedia.org/";
-              }
-              {
-                name = "";
-                url = "https://developer.mozilla.org/";
-              }
-              {
-                name = "";
-                url = "https://listen.tidal.com/";
-              }
-            ];
-          }];
-        };
-
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           darkreader
@@ -69,6 +23,7 @@
         ];
 
         settings = {
+          # first run
           "browser.aboutwelcome.enabled" = false;
           "datareporting.policy.firstRunURL" = "";
 
@@ -114,6 +69,8 @@
           "browser.urlbar.suggest.topsites" = false;
           "browser.urlbar.suggest.engines" = false;
           "browser.urlbar.suggest.recentsearches" = false;
+          "browser.urlbar.suggest.quickactions" = false;
+          "browser.urlbar.suggest.quicksuggest.all" = false;
 
           # clear on shutdown
           "privacy.sanitize.sanitizeOnShutdown" = true;
@@ -126,13 +83,23 @@
           "network.trr.mode" = 2; # dns over https if available
           "dom.security.https_only_mode" = true;
 
-
           # telemetry
-          "toolkit.telemetry.server" = "";
-          "toolkit.telemetry.unified" = false;
+          "app.normandy.api.url" = "";
+          "app.normandy.api.enabled" = false;
+          "app.normandy.first_run" = false;
+          "app.shield.outputstudies.enabled" = false;
+          "breakpad.reportURL" = "";
+          "browser.send_pings" = false;
+          "browser.places.speculativeConnect.enabled" = false;
+          "browser.urlbar.speculativeConnect.enabled" = false;
           "datareporting.healthreport.uploadEnabled" = false;
           "datareporting.healthreport.service.enabled" = false;
           "datareporting.healthreport.service.firstRun" = false;
+          "toolkit.telemetry.server" = "";
+          "toolkit.telemetry.unified" = false;
+
+          # ai
+          "browser.ai.control.default" = "blocked";
         };
       };
 
