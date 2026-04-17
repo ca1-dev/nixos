@@ -17,6 +17,7 @@
     fzf
     git
     htop
+    lynx
     neomutt
     neovim
     p7zip
