@@ -69,7 +69,7 @@ in
           )
 
           (deflayer default
-              NumLock Numpad1 Numpad2 Numpad3 Numpad4 Numpad5 Numpad6 Numpad7 Numpad8 Numpad9 Numpad0 NumpadSubtract NumpadAdd Delete ShiftLeft ShiftLeft ShiftLeft
+              _ _ _ _ _ _ _ _ _ _ _ NumpadSubtract NumpadAdd Delete ShiftLeft ShiftLeft ShiftLeft
 
               _ _ _ _ _ _ _ _ _ _ Backspace
               Escape _ _ _ _ _ Enter
