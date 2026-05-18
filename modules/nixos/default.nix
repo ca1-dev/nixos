@@ -23,6 +23,7 @@
     p7zip
     ripgrep
     tldr
+    tree-sitter
     viu
     yadm
     zoxide
