@@ -48,66 +48,96 @@ in
         #];
         extraDefCfg = "process-unmapped-keys yes";
         config = ''
+          (defvar
+            tap-time 0
+            hold-time 150
+
+            left-hand-keys (
+              q w e r t
+              a s d f g
+              z x c v b
+              )
+            right-hand-keys (
+              y u i o p
+              h j k l ;
+              n m , . /
+              )
+          )
+
+          (deffakekeys
+            to-base (layer-switch base)
+          )
+
           (defalias
-              sym (layer-toggle sym)
-              gaming (layer-switch gaming)
-              default (layer-switch default)
+            sym (layer-toggle sym)
+            base (layer-switch base)
+            gaming (layer-switch gaming)
+
+            tap (multi
+              (layer-switch nomods)
+              (on-idle-fakekey to-base tap 20)
+            )
+
+            a (tap-hold-release-keys $tap-time $hold-time (multi a @tap) lmet $left-hand-keys)
+            s (tap-hold-release-keys $tap-time $hold-time (multi s @tap) lalt $left-hand-keys)
+            d (tap-hold-release-keys $tap-time $hold-time (multi d @tap) lctl $left-hand-keys)
+            f (tap-hold-release-keys $tap-time $hold-time (multi f @tap) lsft $left-hand-keys)
+            j (tap-hold-release-keys $tap-time $hold-time (multi j @tap) rsft $right-hand-keys)
+            k (tap-hold-release-keys $tap-time $hold-time (multi k @tap) rctl $right-hand-keys)
+            l (tap-hold-release-keys $tap-time $hold-time (multi l @tap) ralt $right-hand-keys)
+            ; (tap-hold-release-keys $tap-time $hold-time (multi ; @tap) rmet $right-hand-keys)
+            space (tap-hold-release $tap-time  $hold-time (multi Space @tap) @sym)
+            backspace (tap-hold-release $tap-time  $hold-time (multi Backspace @tap) @sym)
           )
 
           (defsrc
-              ` 1 2 3 4 5 6 7 8 9 0 - = Backspace ] Enter \
+            1 2 3 4 5 6 7 8 9 0 Backspace
 
-              q w e r t y u i o p [
-              caps h j k l ; '
-              m /
+            q w e r t y u i o p
+            a s d f g h j k l ;
+            z x c v b n m , . /
 
-              <
-              MetaLeft
-              AltLeft
-              MetaRight
-              AltRight
+            Space rmet lmet
           )
 
-          (deflayer default
-              _ _ _ _ _ _ _ _ _ _ _ NumpadSubtract NumpadAdd Delete ShiftLeft ShiftLeft ShiftLeft
+          (deflayer base
+              _ _ _ _ _ _ _ _ _ _ Delete
 
-              _ _ _ _ _ _ _ _ _ _ Backspace
-              Escape _ _ _ _ _ Enter
-              _ _
+              _  _  _  _  _ _ _  _  _  _
+              @a @s @d @f _ _ @j @k @l @;
+              _  _  _  _  _ _ _  _  _  _
 
-              MetaLeft
-              @sym
-              MetaLeft
-              AltLeft
-              @gaming
+              @space @backspace @gaming
+          )
+
+          (deflayer nomods
+              _ _ _ _ _ _ _ _ _ _ Delete
+
+              _ _ _ _ _ _ _ _ _ _
+              _ _ _ _ _ _ _ _ _ _
+              _ _ _ _ _ _ _ _ _ _
+
+              _ _ _
           )
 
           (deflayer sym
-              _ F1 F2 F3 f4 F5 F6 F7 F8 F9 F10 F11 F12 _ _ _ _
+              F1 F2 F3 f4 F5 F6 F7 F8 F9 F10 _
 
-              1 2 3 4 5 6 7 8 9 0 _
-              _ - = [ ] ' _
-              ` \
+              1 2 3 4      5   6      7     8 9 0
+              _ _ _ Escape tab Backspace Enter [ ] '
+              _ _ _ _      `   -      =     _ _ \
 
-              _
-              _
-              _
-              _
-              _
+              _ _ _
           )
 
           (deflayer gaming
-              _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+            _ _ _ _ _ _ _ _ _ _ Delete
 
-              _ _ _ _ _ _ _ _ _ _ _
-              Escape _ _ _ _ _ _
-              _ _
+            _ _ _ _ _ _ _ _ _ _
+            _ _ _ _ _ _ _ _ _ _
+            _ _ _ _ _ _ _ _ _ _
 
-              _
-              @sym
-              _
-              _
-              @default
+            _ _ @base
           )
         '';
       };
