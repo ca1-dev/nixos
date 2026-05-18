@@ -24,9 +24,6 @@ in
   networking.hostName = "nom2";
 
   environment.systemPackages = with pkgs; [
-    (pkgs.extend inputs.nixos-muvm-fex.overlays.default).muvm
-    squashfsTools
-
     gcc
     gnumake
     nodejs

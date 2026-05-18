@@ -28,11 +28,6 @@
       url = "github:ignis-sh/ignis";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixos-muvm-fex = {
-      url = "github:nrabulinski/nixos-muvm-fex/native-build";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { nixpkgs, home-manager, ignis, ... }@inputs: {
