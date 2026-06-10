@@ -27,7 +27,6 @@
     viu
     yadm
     zoxide
-    zsh
 
     gtk-engine-murrine
     mpv
@@ -37,8 +36,8 @@
     wezterm
   ];
 
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
   programs.neovim.defaultEditor = true;
   programs.dconf.enable = true;
 
