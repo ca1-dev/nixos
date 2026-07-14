@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
   colors = {
@@ -74,6 +74,7 @@ in
         iconVariants = [ "Light" ];
       };
     };
+    gtk4.theme = config.gtk.theme;
 
     iconTheme = {
       name = "Tokyonight-Light";

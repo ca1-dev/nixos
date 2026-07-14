@@ -2,6 +2,8 @@
 
 {
   programs.firefox = {
+    configPath = "${config.xdg.configHome}/mozilla/firefox"; # this is default when home.stateVersion > 26.05 
+
     enable = true;
     profiles = {
       ca1 = {
@@ -40,6 +42,7 @@
           "browser.toolbars.bookmarks.visibility" = "never";
           "browser.newtabpage.activity-stream.feeds.system.topstories" = false;
           "browser.newtabpage.activity-stream.topSitesRows" = 0;
+          "browser.newtabpage.activity-stream.showWeather" = false;
           "browser.newtabpage.activity-stream.logowordmark.alwaysVisible" = false;
           "browser.download.autohideButton" = true;
           "devtools.toolbox.host" = "right";

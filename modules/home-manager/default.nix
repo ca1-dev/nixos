@@ -12,6 +12,7 @@
       ];
 
       home.pointerCursor = {
+        enable = true;
         gtk.enable = true;
         x11.enable = true;
         size = 24;
@@ -27,7 +28,7 @@
 
       qt = {
         enable = true;
-        platformTheme.name = "gtk";
+        platformTheme.name = "gtk2";
       };
 
       home.stateVersion = "23.11";
