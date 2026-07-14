@@ -170,9 +170,9 @@ in
   services.blueman.enable = true;
 
   hardware.asahi = {
+    enable = true;
     setupAsahiSound = true;
     extractPeripheralFirmware = true;
-    peripheralFirmwareDirectory = /home/ca1/asahi;
   };
 
   nix.settings = {
