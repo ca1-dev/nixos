@@ -10,18 +10,20 @@ in
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      fcitx5-gtk
-    ];
+    fcitx5 = {
+      addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-gtk
+      ];
+      settings.globalOptions = {
+        "Hotkey/TriggerKeys"."0" = "Control+Shift+space";
+      };
+    };
   };
 
   networking.hostName = "nom";
 
   environment.systemPackages = with pkgs; [
-    (pkgs.extend inputs.nixos-muvm-fex.overlays.default).muvm
-    squashfsTools
-
     gcc
     gnumake
     nodejs
@@ -43,10 +45,11 @@ in
   };
 
   hardware.asahi = {
+    enable = true;
     setupAsahiSound = true;
     extractPeripheralFirmware = true;
-    peripheralFirmwareDirectory = /home/ca1/asahi;
   };
+
 
   nix.settings = {
     auto-optimise-store = true;
@@ -60,14 +63,14 @@ in
     ];
   };
 
-  programs.light.enable = true;
   services.actkbd = {
     enable = true;
     bindings = [
-      { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 10"; }
-      { keys = [ 224 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 10"; }
+      { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/brightnessctl set 5%+"; }
+      { keys = [ 224 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/brightnessctl set 5%-"; }
     ];
   };
+
 
   networking.dhcpcd.enable = true;
   networking = {
